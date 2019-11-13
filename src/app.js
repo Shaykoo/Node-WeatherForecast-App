@@ -11,6 +11,7 @@ const publicDirPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname ,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
+const port = process.env.PORT || 8787;
 
 //Setup handlebars engine and views location
 app.set('view engine', 'hbs') // for not writing .hbs extension over and over again
@@ -19,6 +20,7 @@ hbs.registerPartials(partialsPath) // setting for the partials
 
 //setup static directory to serve
 app.use(express.static(publicDirPath))
+
 
 app.get('', (req, res)=>{
     res.render('index',{
@@ -85,6 +87,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(8787, ()=> {
-    console.log('Server has started')
+app.listen(port, ()=> {
+    console.log(`Server has started at ${port}`)
 })
