@@ -56,7 +56,7 @@ app.get('/weather', (req, res)=> {
                 error:'Error while fetching Geocode for the Address'
             })
         }
-        forecast(longitude,latitude,(error,{temp,rain})=>{
+        forecast(longitude,latitude,(error,{temp,rain,humidity,windSpeed})=>{
             if(error){
              return res.send({
                     error:'Error while fetching Geocode for the Address'
@@ -65,6 +65,8 @@ app.get('/weather', (req, res)=> {
             res.send({
                 temp,
                 rain,
+                humidity,
+                windSpeed,
                 location
             })
         })

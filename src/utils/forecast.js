@@ -13,7 +13,9 @@ const forecast = (longitude, latitude, callback) => {
         else{ 
             callback(undefined,{
             temp : body.currently.temperature,
-            rain : body.currently.precipProbability
+            rain : body.currently.precipProbability,
+            humidity: body.hourly.data[0].humidity,
+            windSpeed: body.hourly.data[0].windSpeed
         })
       }
     })
