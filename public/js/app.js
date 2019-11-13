@@ -18,7 +18,7 @@ weatherForm.addEventListener('submit',(e)=>{
         } 
         else{
             address.textContent = data.location;
-            temprature.textContent = `The temprature of ${location} is ${data.temp}`;
+            temprature.textContent = `The temperature of ${location} is ${data.temp}`;
             rain.textContent = `Rain percentage is ${data.rain}%`;
         }
     })
